@@ -1,2 +1,2 @@
-echo "Test script running..."
-   exit 0
+echo "Docker test!"
+echo "Docker test!" > /test/test.txt

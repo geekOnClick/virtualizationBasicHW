@@ -1,0 +1,14 @@
+services:
+  test:
+    container_name: test
+    image: geekonclick/test:tested
+    build:
+      context: .
+    command: sh -c "./test.sh"
+    ports:
+      - 95:95
+    volumes:
+      - test_vol:/test
+
+volumes:
+  test_vol:

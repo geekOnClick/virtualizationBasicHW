@@ -1,8 +1,7 @@
-FROM node:14
+FROM alpine:latest
 
-WORKDIR /test
+WORKDIR /app
 
-COPY main.js .
-COPY test.sh .
+COPY . /app
 
-CMD ["node", "/test/main.js"]
+RUN chmod +x test.sh
