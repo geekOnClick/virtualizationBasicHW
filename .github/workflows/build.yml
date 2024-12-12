@@ -2,15 +2,15 @@ name: Deploy jupiterhub
 
 on:
   push:
-    branches: [master]
+    branches: [hw4]
     paths-ignore:
       - 'README.md'
       - '.github/**'
   pull_request:
-    branches: [master]
+    branches: [hw4]
 
 env:
-  IMAGE_NAME: jupyterhub
+  IMAGE_NAME: juputerhub
   TAG: tested
 
 jobs:
