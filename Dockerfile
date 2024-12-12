@@ -1,7 +1,5 @@
-FROM alpine:latest
+FROM jupyterhub/jupyterhub:latest
 
 WORKDIR /app
 
 COPY . /app
-
-RUN chmod +x test.sh

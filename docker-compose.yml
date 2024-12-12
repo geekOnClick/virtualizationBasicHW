@@ -1,14 +1,19 @@
 services:
-  test:
-    container_name: test
-    image: geekonclick/test:tested
+  jupiterhub:
+    container_name: jupiterhub 
     build:
       context: .
-    command: sh -c "./test.sh"
+    image: geekonclick/jupyterhub:tested
+    env_file:
+      - .env
+    environment:
+      JUPYTERHUB_ADMIN: admin
+      DOCKER_NOTEBOOK_DIR: ${CUSTOM_ROOT_DIR}
+    restart: always
     ports:
-      - 95:95
+      - 8020:8020
     volumes:
-      - test_vol:/test
+      - "jupyterhub-data:/data"
 
 volumes:
-  test_vol:
+  jupyterhub-data:
